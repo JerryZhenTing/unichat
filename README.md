@@ -33,8 +33,8 @@ Unichat is a web application that leverages the power of multiple AI language mo
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/math-ai-verifier.git
-   cd math-ai-verifier
+   git clone https://github.com/JerryZhenTing/unichat.git
+   cd unichat
    ```
 
 2. Create and activate a virtual environment:
