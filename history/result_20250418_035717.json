@@ -1,0 +1,28 @@
+{
+  "consensus": {
+    "status": "no_consensus",
+    "answers": {
+      "chatgpt": "None",
+      "claude": "None",
+      "deepseek": "None"
+    },
+    "confidence": "low"
+  },
+  "explanation": {
+    "chatgpt": "Error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+    "claude": "Error: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}",
+    "deepseek": "Error: API returned status code 401"
+  },
+  "raw_answers": {
+    "chatgpt": null,
+    "claude": null,
+    "deepseek": null
+  },
+  "raw_responses": {
+    "chatgpt": "Error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+    "claude": "Error: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}",
+    "deepseek": "Error: API returned status code 401"
+  },
+  "timestamp": "2025-04-18T03:57:17.475767",
+  "problem_text": ""
+}
