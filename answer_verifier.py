@@ -275,3 +275,37 @@ class AnswerVerifier:
         }
         
         return result
+    # Add this method to the MathAIAnalyzer class to analyze problem complexity
+    def analyze_problem_complexity(self):
+        """Analyze how complexity affects model consensus"""
+        if self.results_df is None:
+            self.load_history()
+            
+        # Create a simple complexity metric based on problem length
+        self.results_df['problem_complexity'] = self.results_df['problem_text'].apply(len)
+        
+        # Create complexity bins
+        self.results_df['complexity_bin'] = pd.qcut(
+            self.results_df['problem_complexity'], 
+            4, 
+            labels=["Simple", "Moderate", "Complex", "Very Complex"]
+        )
+        
+        # Analyze success rate by complexity
+        success_by_complexity = self.results_df.groupby('complexity_bin')['consensus_status'].apply(
+            lambda x: (x == 'full_consensus').sum() / len(x) * 100
+        )
+        
+        # Visualize
+        plt.figure(figsize=(10, 6))
+        success_by_complexity.plot(kind='bar', color='skyblue')
+        plt.title('Success Rate by Problem Complexity')
+        plt.xlabel('Problem Complexity')
+        plt.ylabel('Full Consensus Rate (%)')
+        plt.ylim(0, 100)
+        plt.grid(axis='y')
+        plt.tight_layout()
+        plt.savefig('analysis_results/complexity_analysis.png')
+        plt.close()
+        
+        return success_by_complexity
